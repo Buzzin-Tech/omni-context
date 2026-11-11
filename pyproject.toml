@@ -1,0 +1,17 @@
+[project]
+name = "omni-context"
+version = "0.1.0"
+description = "Cross-Agent Unified Context & Design Observer for Antigravity & Claude"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=2.3.0",
+    "rich>=15.0.0",
+    "typer>=0.29.1",
+    "watchdog>=7.1.0",
+]
+
+[project.scripts]
+omni = "omni_context.cli:app"
+omni-mcp = "omni_context.mcp_server:main"
+
