@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "mcp>=2.3.0",
+    "paramiko>=5.1.0",
     "rich>=15.0.0",
     "typer>=0.29.1",
     "watchdog>=7.1.0",

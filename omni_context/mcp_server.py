@@ -1,13 +1,16 @@
 """Official FastMCP Server for OmniContext (Cross-Agent Memory)."""
 from typing import Optional, List, Dict, Any
-from mcp.server.fastmcp import FastMCP
+try:
+    from mcp.server.fastmcp import FastMCP as MCPServer
+except (ImportError, ModuleNotFoundError):
+    from mcp.server import MCPServer
 
 from omni_context.db import (
     query_recent_sessions, search_events, query_ui_patterns, query_recent_file_touches
 )
 
-# Initialize FastMCP Server
-mcp = FastMCP("omni-context")
+# Initialize MCP Server
+mcp = MCPServer("omni-context")
 
 @mcp.tool()
 def get_recent_activity(agent: Optional[str] = None, limit: int = 10) -> str:
